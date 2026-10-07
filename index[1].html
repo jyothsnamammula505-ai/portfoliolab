@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jyothsna | CSE Student & Software Developer</title>
+<meta name="description" content="Portfolio of Mammula Venkata Sai Jyothsna — Computer Science and Engineering student, software development and cybersecurity enthusiast.">
+<style>
+:root{
+  --bg:#07111f; --bg2:#0b1728; --card:rgba(16,31,52,.72);
+  --text:#edf5ff; --muted:#9fb0c7; --line:rgba(255,255,255,.10);
+  --cyan:#55d9ff; --violet:#8b7cff; --green:#6ee7b7;
+  --shadow:0 24px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text); background:
+  radial-gradient(circle at 85% 10%,rgba(85,217,255,.12),transparent 28%),
+  radial-gradient(circle at 10% 35%,rgba(139,124,255,.10),transparent 28%),
+  linear-gradient(145deg,var(--bg),var(--bg2));
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:10;
+  backdrop-filter:blur(18px);background:rgba(7,17,31,.72);
+  border-bottom:1px solid var(--line)
+}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.1rem;font-weight:800;letter-spacing:.5px}
+.logo span{color:var(--cyan)}
+.links{display:flex;gap:28px;color:var(--muted);font-size:.92rem}
+.links a:hover{color:var(--text)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:110px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.badge{
+ display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(85,217,255,.25);
+ background:rgba(85,217,255,.07);border-radius:999px;color:#bfefff;font-size:.82rem;margin-bottom:20px
+}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 14px var(--green)}
+h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.98;letter-spacing:-.055em;max-width:850px}
+.gradient{background:linear-gradient(90deg,var(--text),#9deaff 45%,#aaa0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:690px;margin:24px 0 30px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:.92rem;transition:.2s}
+.btn.primary{background:linear-gradient(135deg,var(--cyan),#7788ff);color:#06111e;border:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(85,217,255,.14)}
+.hero-card{
+ background:linear-gradient(160deg,rgba(85,217,255,.10),rgba(139,124,255,.08)),var(--card);
+ border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow);
+ position:relative;overflow:hidden
+}
+.hero-card:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(85,217,255,.13);filter:blur(30px);right:-60px;top:-60px}
+.card-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}
+.trophy{font-size:3.8rem;margin:20px 0 10px}
+.hero-card h3{font-size:1.35rem}
+.hero-card p{font-size:.92rem;margin:8px 0 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+.stat{padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025)}
+.stat b{display:block;font-size:1.25rem}.stat span{font-size:.75rem;color:var(--muted)}
+section{padding:95px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px}
+.eyebrow{color:var(--cyan);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.035em;margin-top:7px}
+.section-head p{max-width:520px;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:27px}
+.card p{color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.chip{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.025);font-size:.82rem;color:#d9e6f5}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{min-height:285px;display:flex;flex-direction:column}
+.project .icon{font-size:1.8rem;margin-bottom:20px}
+.project h3{font-size:1.2rem;margin-bottom:9px}
+.project p{font-size:.9rem;flex:1}
+.tag{display:inline-block;color:#bdeeff;font-size:.72rem;border:1px solid rgba(85,217,255,.22);padding:5px 8px;border-radius:7px;margin:5px 5px 0 0}
+.winner{border-color:rgba(110,231,183,.3);background:linear-gradient(145deg,rgba(110,231,183,.08),rgba(16,31,52,.72))}
+.timeline{border-left:1px solid var(--line);padding-left:25px}
+.item{position:relative;margin-bottom:28px}
+.item:before{content:"";position:absolute;width:9px;height:9px;background:var(--cyan);border-radius:50%;left:-30px;top:8px;box-shadow:0 0 0 5px rgba(85,217,255,.08)}
+.item h3{font-size:1.05rem}.item .date{color:var(--cyan);font-size:.78rem}.item p{color:var(--muted);margin-top:4px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{display:flex;gap:14px;align-items:center}
+.contact-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(85,217,255,.08);border:1px solid var(--line)}
+.contact small{color:var(--muted);display:block}.contact a{font-weight:650;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.82rem;text-align:center}
+@media(max-width:850px){
+ .links{display:none}.hero-grid,.about,.contact{grid-template-columns:1fr}.projects{grid-template-columns:1fr}
+ .hero{padding-top:120px}.hero-card{max-width:560px}.stats{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:500px){
+ h1{font-size:3.1rem}.stats{grid-template-columns:1fr}.section-head{display:block}
+ section{padding:70px 0}.card{padding:22px}
+}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="logo" href="#home">JYOTHSNA<span>.</span></a>
+  <div class="links">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+  <div>
+    <div class="badge"><span class="dot"></span> CSE Student · Software & Cybersecurity</div>
+    <h1>Building <span class="gradient">useful tech</span> with purpose.</h1>
+    <p>I'm <b>Mammula Venkata Sai Jyothsna</b>, a Computer Science and Engineering student focused on software development, problem-solving and practical technology projects.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore my work →</a>
+      <a class="btn" href="https://www.linkedin.com/in/mammula-venkata-sai-jyothsna-3b92103b6/" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="card-label">Latest achievement</div>
+    <div class="trophy">🏆</div>
+    <h3>2nd Prize — Project Expo</h3>
+    <p><b>Public Wi-Fi Safety Checker</b><br>Wi-Fi security assessment using risk scoring and cybersecurity concepts.</p>
+    <div class="stats">
+      <div class="stat"><b>8.79</b><span>CGPA / 10</span></div>
+      <div class="stat"><b>2028</b><span>Graduation</span></div>
+      <div class="stat"><b>3+</b><span>Featured projects</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="about"><div class="container">
+  <div class="section-head"><div><div class="eyebrow">01 · About</div><h2>A developer who likes solving real problems.</h2></div>
+  <p>My foundation spans programming, data structures, databases, operating systems, computer networks and cybersecurity.</p></div>
+  <div class="about">
+    <div class="card"><p>Computer Science and Engineering student with hands-on experience developing software, cybersecurity, AI and networking projects. Comfortable with SDLC, debugging, testing, Git and GitHub, with strong problem-solving and teamwork skills.</p></div>
+    <div class="card" id="skills"><b>Core toolkit</b><div class="skills">
+      <span class="chip">Java</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">SQL</span>
+      <span class="chip">DSA</span><span class="chip">OOP</span><span class="chip">DBMS</span><span class="chip">OS</span>
+      <span class="chip">Computer Networks</span><span class="chip">Git & GitHub</span><span class="chip">SDLC</span>
+      <span class="chip">Cybersecurity</span><span class="chip">AI / ML</span><span class="chip">IoT</span><span class="chip">Debugging</span>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="container">
+  <div class="section-head"><div><div class="eyebrow">02 · Projects</div><h2>Selected work</h2></div>
+  <p>Projects combining software development, AI, networking and cybersecurity.</p></div>
+  <div class="projects">
+    <article class="card project winner">
+      <div class="icon">🛡️</div><h3>Public Wi-Fi Safety Checker</h3>
+      <p>Wi-Fi security application that identifies network security types and assesses potential risks using a risk-scoring approach. <b>Won 2nd Prize at a Project Expo.</b></p>
+      <div><span class="tag">Cybersecurity</span><span class="tag">Networking</span><span class="tag">Risk Scoring</span></div>
+    </article>
+    <article class="card project">
+      <div class="icon">🌾</div><h3>GramVikash — Unified AI Rural Assistance</h3>
+      <p>AI-powered platform designed to provide accessible digital assistance and essential services for rural communities, including disease identification and government-scheme information.</p>
+      <div><span class="tag">AI</span><span class="tag">Dialogflow</span><span class="tag">Local Language</span></div>
+    </article>
+    <article class="card project">
+      <div class="icon">💬</div><h3>WhatsApp Web-based Router System</h3>
+      <p>Workflow for efficient message routing, processing and forwarding through WhatsApp Web, focused on message organization and accessibility.</p>
+      <div><span class="tag">Web</span><span class="tag">Automation</span><span class="tag">Routing</span></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="education"><div class="container">
+  <div class="section-head"><div><div class="eyebrow">03 · Journey</div><h2>Education & learning</h2></div></div>
+  <div class="card timeline">
+    <div class="item"><div class="date">2024 — 2028</div><h3>B.Tech — Computer Science and Engineering</h3><p>CGPA: 8.79 / 10.00</p></div>
+    <div class="item"><div class="date">2022 — 2024</div><h3>Sri Viswa Junior College</h3><p>Intermediate: 90.2%</p></div>
+    <div class="item"><div class="date">2021 — 2022</div><h3>Sri Chaitanya Techno School</h3><p>SSC: 75.17%</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="container">
+  <div class="section-head"><div><div class="eyebrow">04 · Contact</div><h2>Let's connect.</h2></div>
+  <p>Open to software development opportunities, technical collaborations and learning experiences.</p></div>
+  <div class="contact">
+    <div class="card contact-card"><div class="contact-icon">✉</div><div><small>Email</small><a href="mailto:jyothsnamammula505@gmail.com">jyothsnamammula505@gmail.com</a></div></div>
+    <div class="card contact-card"><div class="contact-icon">in</div><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/mammula-venkata-sai-jyothsna-3b92103b6/" target="_blank">linkedin.com/in/mammula-venkata-sai-jyothsna-3b92103b6</a></div></div>
+    <div class="card contact-card"><div class="contact-icon">☎</div><div><small>Phone</small><a href="tel:+916303336300">+91 6303336300</a></div></div>
+    <div class="card contact-card"><div class="contact-icon">⌁</div><div><small>Focus</small><a href="#projects">Software · Cybersecurity · AI · Networking</a></div></div>
+  </div>
+</div></section>
+</main>
+
+<footer>© 2026 Mammula Venkata Sai Jyothsna · Built with curiosity, code & consistency.</footer>
+</body>
+</html>
